@@ -84,5 +84,6 @@ class TestBatchAddGraph(unittest.TestCase):
         ]
 
         with BatchAddGraph(g, batch_size=10, batch_addn=True) as cut:
-            cut.addN(quads)
+            count = cut.addN(quads)
         self.assertEqual(g.counts, [10, 2])
+        self.assertEqual(12,count)
